@@ -3,8 +3,15 @@
 
 #include "D:\Coding\C++\AGDG\indieOne 1.1\include\resourcemanager.h"
 #include "D:\Coding\C++\AGDG\indieOne 1.1\include\inputmanager.h"
+#include "D:\Coding\C++\AGDG\indieOne 1.1\include\animationmodule.h"
 
-typedef sf::Sprite Object;
+struct Stats
+{
+	int health;
+	float speed;
+	int attack;
+	int defense;
+};
 
 class Entity
 {
@@ -23,11 +30,11 @@ class Entity
 		sf::Vector2f getPosition();
 		void setPosition(sf::Vector2f pos);
 
-		virtual void update();
+		virtual void update(sf::Time deltaT);
 		virtual void draw(sf::RenderWindow *window);
 
 	protected:
-		Object sprite;
+		sf::Sprite sprite;
 		bool active;
 		string type;
 		string state;
@@ -52,6 +59,9 @@ class Character : public Entity
 
 	protected:
 		bool alive;
+		Stats stats;
+		AnimationModule *currAnimation;
+		virtual void updateMotion(sf::Time deltaT);
 };
 
 class Player : public Character
@@ -59,10 +69,14 @@ class Player : public Character
 	public:
 		Player(const sf::Texture *texture, Controls *controller);
 		bool isControlled() {return controlled;};
-		void update();
+		void update(sf::Time deltaT);
 	private:
 		Controls *controller;
+		AnimationModule walk;
+		AnimationModule idle;
 		bool controlled;
+		void buildAnimations(); //Utility
+		void updateMotion(sf::Time deltaT);
 };
 
 class Enemy : public Character

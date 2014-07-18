@@ -2,7 +2,7 @@
 1405352609 source:d:\coding\c++\agdg\indieone 1.1\main.cpp
 	"include/engine.h"
 
-1405447390 d:\coding\c++\agdg\indieone 1.1\include\engine.h
+1405710348 d:\coding\c++\agdg\indieone 1.1\include\engine.h
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\entities.h"
 
 1367997278 d:\coding\c++\sfml-2.1\include\sfml\graphics.hpp
@@ -339,7 +339,7 @@
 	<string>
 	<vector>
 
-1405445949 source:d:\coding\c++\agdg\indieone 1.1\src\engine.cpp
+1405613368 source:d:\coding\c++\agdg\indieone 1.1\src\engine.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\engine.h"
 	<iostream>
 
@@ -357,14 +357,26 @@
 1405381376 source:d:\coding\c++\agdg\indieone 1.1\src\resourcemanager.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\resourcemanager.h"
 
-1405446798 d:\coding\c++\agdg\indieone 1.1\include\entities.h
+1405613349 d:\coding\c++\agdg\indieone 1.1\include\entities.h
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\resourcemanager.h"
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\inputmanager.h"
+	"D:\Coding\C++\AGDG\indieOne 1.1\include\animationmodule.h"
 
-1405446814 source:d:\coding\c++\agdg\indieone 1.1\src\entities.cpp
+1405618644 source:d:\coding\c++\agdg\indieone 1.1\src\entities.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\entities.h"
 	<iostream>
 
 1405447277 d:\coding\c++\agdg\indieone 1.1\include\inputmanager.h
 	<SFML/Graphics.hpp>
+
+1405447476 source:d:\coding\c++\agdg\indieone 1.1\src\inputmanager.cpp
+	"D:\Coding\C++\AGDG\indieOne 1.1\include\inputmanager.h"
+
+1405617363 d:\coding\c++\agdg\indieone 1.1\include\animationmodule.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1405617285 source:d:\coding\c++\agdg\indieone 1.1\src\animationmodule.cpp
+	"D:\Coding\C++\AGDG\indieOne 1.1\include\animationmodule.h"
+	<iostream>
 
