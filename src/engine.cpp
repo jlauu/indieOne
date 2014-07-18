@@ -1,6 +1,8 @@
 #include "D:\Coding\C++\AGDG\indieOne 1.1\include\engine.h"
 #include <iostream>
 
+//Ideas borrowed from: http://gameprogrammingpatterns.com/game-loop.html
+
 Engine::Engine()
 {
 	view.reset(sf::FloatRect(0,0,640,480));
