@@ -11,15 +11,25 @@ Engine::Engine()
 	inputs = new InputManager(window);
 }
 
-void Engine::loop()
+Engine::~Engine()
+{
+	delete focus;
+	delete inputs;
+}
+
+bool Engine::loop()
 {
 	//background
 	entities.push_back(new Environment(&resources.getTexture("bg.jpg"), sf::Vector2f(0,0)));
 	//player
 	entities.push_back(new Player(&resources.getTexture("alucard.png"), &inputs->getControls()));
-	
+	player = entities[1];
+	player->setPosition(sf::Vector2f(320,180));
 	focus = entities[1];
-
+	//platforms
+	platforms.push_back(new Platform(&resources.getTexture("plat.png"), sf::Vector2f(270,300)));
+	platforms.push_back(new Platform(&resources.getTexture("plat.png"), sf::Vector2f(400,300)));
+	platforms.push_back(new Platform(&resources.getTexture("plat.png"), sf::Vector2f(600,400)));
 
 	clock.restart();
 	sf::Time lag = sf::milliseconds(0);
@@ -43,12 +53,26 @@ void Engine::loop()
 		}
 		render();
 		inputs->clearAll();
-   }
+
+		//Debugging
+		if (inputs->getControls().debug.reset) {
+			window->close();
+			return true;
+		}
+	}
+	return false;
 }
 
 void Engine::update()
 {
-	for (vector<Entity *>::iterator it = entities.begin(); it!=entities.end(); it++) {
+	for (vector<Entity *>::iterator it = platforms.begin(); it!=platforms.end(); it++) {
+		if((*it)->getGlobalBounds().intersects(player->getGlobalBounds())) {
+			player->collide(*it);
+		}
+	}
+
+	for (vector<Entity *>::iterator it = entities.begin(); it!=entities.end(); it++)
+	{
 		(*it)->update(UPDATE_SPAN);
 	}
 }
@@ -57,8 +81,18 @@ void Engine::render()
 {
 	window->clear();
 	handleView();
-	for (vector<Entity *>::iterator it = entities.begin(); it!=entities.end(); it++) {
+	for (vector<Entity *>::iterator it = entities.begin(); it!=entities.end(); it++)
+	{
 		(*it)->draw(window);
+		if(inputs->getControls().debug.hboxes) //Debugging
+			(*it)->debugInfo(window);
+	}
+	for (vector<Entity *>::iterator it = platforms.begin(); it!=platforms.end(); it++)
+	{
+		(*it)->draw(window);
+
+		if(inputs->getControls().debug.hboxes) //Debugging
+			(*it)->debugInfo(window);
 	}
 	window->display();
 }

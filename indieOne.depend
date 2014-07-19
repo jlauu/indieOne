@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1405352609 source:d:\coding\c++\agdg\indieone 1.1\main.cpp
+1405788910 source:d:\coding\c++\agdg\indieone 1.1\main.cpp
 	"include/engine.h"
 
-1405710348 d:\coding\c++\agdg\indieone 1.1\include\engine.h
+1405788781 d:\coding\c++\agdg\indieone 1.1\include\engine.h
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\entities.h"
 
 1367997278 d:\coding\c++\sfml-2.1\include\sfml\graphics.hpp
@@ -339,7 +339,7 @@
 	<string>
 	<vector>
 
-1405613368 source:d:\coding\c++\agdg\indieone 1.1\src\engine.cpp
+1405790166 source:d:\coding\c++\agdg\indieone 1.1\src\engine.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\engine.h"
 	<iostream>
 
@@ -357,26 +357,33 @@
 1405381376 source:d:\coding\c++\agdg\indieone 1.1\src\resourcemanager.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\resourcemanager.h"
 
-1405613349 d:\coding\c++\agdg\indieone 1.1\include\entities.h
+1405789664 d:\coding\c++\agdg\indieone 1.1\include\entities.h
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\resourcemanager.h"
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\inputmanager.h"
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\animationmodule.h"
+	"D:\Coding\C++\AGDG\indieOne 1.1\include\physicsmodule.h"
 
-1405618644 source:d:\coding\c++\agdg\indieone 1.1\src\entities.cpp
+1405791302 source:d:\coding\c++\agdg\indieone 1.1\src\entities.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\entities.h"
 	<iostream>
 
-1405447277 d:\coding\c++\agdg\indieone 1.1\include\inputmanager.h
+1405789605 d:\coding\c++\agdg\indieone 1.1\include\inputmanager.h
 	<SFML/Graphics.hpp>
 
-1405447476 source:d:\coding\c++\agdg\indieone 1.1\src\inputmanager.cpp
+1405790093 source:d:\coding\c++\agdg\indieone 1.1\src\inputmanager.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\inputmanager.h"
 
 1405617363 d:\coding\c++\agdg\indieone 1.1\include\animationmodule.h
 	<SFML/Graphics.hpp>
 	<string>
 
-1405617285 source:d:\coding\c++\agdg\indieone 1.1\src\animationmodule.cpp
+1405787629 source:d:\coding\c++\agdg\indieone 1.1\src\animationmodule.cpp
 	"D:\Coding\C++\AGDG\indieOne 1.1\include\animationmodule.h"
-	<iostream>
+
+1405722804 d:\coding\c++\agdg\indieone 1.1\include\physicsmodule.h
+	<SFML/System/Vector2.hpp>
+	<SFML/System/Time.hpp>
+
+1405723626 source:d:\coding\c++\agdg\indieone 1.1\src\physicsmodule.cpp
+	"D:\Coding\C++\AGDG\indieOne 1.1\include\physicsmodule.h"
 

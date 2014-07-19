@@ -10,8 +10,9 @@ class Engine
 {
 	public:
 		Engine();
+		~Engine();
 
-		void loop();
+		bool loop();
 
 		void update(); //updates physics based on time elapsed
 		void render(); //draws after updates
@@ -22,9 +23,11 @@ class Engine
 		sf::RenderWindow *window;
 		sf::View view;
 		Entity *focus;
+		Entity *player;
 		InputManager *inputs;
 		ResourceManager resources;
 		vector<Entity *> entities;
+		vector<Entity *> platforms;
 		
 		void handleView();
 };

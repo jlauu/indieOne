@@ -22,6 +22,16 @@ void InputManager::processEvent(sf::Event event)
 				break;
 			case sf::Event::KeyPressed:
 				controller.events.keypress = true;
+				//Debug
+				switch (event.key.code)
+				{
+					case sf::Keyboard::F1:
+						controller.debug.reset = !controller.debug.reset;
+						break;
+					case sf::Keyboard::F2:
+						controller.debug.hboxes = !controller.debug.hboxes;
+						break;
+				}
 				break;
 			case sf::Event::MouseMoved:
 				controller.events.mousemove = true;
@@ -52,6 +62,9 @@ void InputManager::processInputs()
 	//Down Arrow
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		controller.keys.down = true;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		controller.keys.space = true;
+
 }
 
 void InputManager::clearEvents()
@@ -75,6 +88,7 @@ void InputManager::clearMouse()
 
 void InputManager::clearAll()
 {
-	Controls newController;
-	controller = newController;
+	clearEvents();
+	clearKeys();
+	clearMouse();
 }

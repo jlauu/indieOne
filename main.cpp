@@ -2,9 +2,12 @@
 
 int main()
 {
-
-	Engine game;
-    game.loop();
+	bool reset = true;
+	
+	while (reset) {
+		Engine game;
+		reset = game.loop();
+	}
 
     return 0;
 }

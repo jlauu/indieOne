@@ -9,6 +9,7 @@ struct Events
 	bool keypress = false;
 	bool mousemove = false;
 	bool focus = true;
+	
 };
 
 struct Mouse
@@ -26,6 +27,13 @@ struct Keys
 	bool right = false;
 	bool up = false;
 	bool down = false;
+	bool space = false;
+};
+
+struct Debug // Doesn't reset
+{
+	bool reset = false;
+	bool hboxes = false;
 };
 
 struct Controls
@@ -33,6 +41,7 @@ struct Controls
 	Events events;
 	Mouse mouse;
 	Keys keys;
+	Debug debug;
 };
 
 class InputManager

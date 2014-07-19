@@ -1,5 +1,4 @@
 #include "D:\Coding\C++\AGDG\indieOne 1.1\include\animationmodule.h"
-#include <iostream>
 
 AnimationModule::AnimationModule()
 {
@@ -53,5 +52,4 @@ void AnimationModule::animate(sf::Time deltaT)
 	}
 	
 	sprite->setTextureRect(frames[cur_frame]);
-	std::cout << type << " " << cur_frame << std::endl;
-}
+ }
